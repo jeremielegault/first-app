@@ -7,7 +7,8 @@
 
 <div class="contact-card">
     <header>
-        <div class="thumb">
+        <!-- <div class={image ? "thumb" : "thumb thumb-placeholder"}> -->
+        <div class="thumb" class:thumb-placeholder={!image}>
             <img src={image} alt="" />
         </div>
         <div class="user-data">
@@ -16,7 +17,7 @@
         </div>
     </header>
     <div class="description">
-        <p>{description}</p>
+        <p>{@html description}</p>
     </div>
 </div>
 
@@ -38,6 +39,10 @@
     .thumb {
         width: 33%;
         height: 100%;
+    }
+
+    .thumb-placeholder {
+        background-color: grey;
     }
 
     img {
