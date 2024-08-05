@@ -1,7 +1,11 @@
 <script>
+	import ContactCard from "./ContactCard.svelte";
+
 	let name = "Jeremie";
 	let age = 30;
-
+	let jobTitle = "";
+	let description = "";
+	let image = "";
 	$: uppercaseName = name.toUpperCase();
 	$: console.log(name);
 	$: if (name === "Jeremie Legault") {
@@ -25,6 +29,11 @@
 <!-- <button on:click={changeName}>Change Name</button> -->
 <!-- <input type="text" value={name} on:input={nameInput} /> -->
 <input type="text" bind:value={name} />
+<input type="text" bind:value={jobTitle} />
+<input type="text" bind:value={description} />
+<input type="text" bind:value={image} />
+
+<ContactCard userName={name} {jobTitle} {description} {image} />
 
 <style>
 	h1 {
